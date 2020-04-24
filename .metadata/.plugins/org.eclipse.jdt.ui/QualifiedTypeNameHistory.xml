@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="sun.print.PSPrinterJob.PluginPrinter"/>
+    <fullyQualifiedTypeName name="java.io.Console"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.code.Attribute.Array"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.sun.deploy.jcp.Main"/>
+    <fullyQualifiedTypeName name="com.sun.jndi.url.iiopname.iiopnameURLContextFactory"/>
+    <fullyQualifiedTypeName name="javafx.scene.chart.PieChart.Data"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.objectweb.asm.tree.IntInsnNode"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.PrintFilesEvent"/>
+    <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.annotations.Ignore"/>
+    <fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+    <fullyQualifiedTypeName name="java.lang.Void"/>
+    <fullyQualifiedTypeName name="sun.security.krb5.KdcComm"/>
+    <fullyQualifiedTypeName name="apple.laf.JRSUIConstants.Size"/>
+    <fullyQualifiedTypeName name="javax.swing.text.DefaultEditorKit.InsertBreakAction"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.java.LargeLocalLiveness"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+    <fullyQualifiedTypeName name="com.sun.xml.internal.messaging.saaj.packaging.mime.util.QDecoderStream"/>
+    <fullyQualifiedTypeName name="com.sun.javafx.image.IntPixelAccessor"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="javax.imageio.IIOException"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>

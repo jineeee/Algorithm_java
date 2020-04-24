@@ -1,0 +1,33 @@
+package practice;
+
+/*
+ */
+
+public class SkillCheck_1_4 {
+	
+	static int n=5;
+	static int[] a1 = {9, 20, 28, 18, 11};
+	static int[] a2 = {30, 1, 21, 17, 28};
+
+	static public String[] solution(int[] arr1, int[] arr2) {
+		 String[] answer = {};
+		 String[] temp1 = new String[arr1.length];
+		 String[] temp2 = new String[arr2.length];
+	      
+		 String[] map = new String[n];
+	        for(int i = 0 ; i < n ; i++) {
+	            map[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+	        }
+	      
+	      for(int i=0; i<temp1.length; i++) {
+	    	  System.out.println(temp1[i]);
+	      }
+	      System.out.println(temp1);
+	      
+	      return answer;
+	  }
+	
+	public static void main(String[] args) {
+		System.out.println(solution(a1, a2));
+	}
+}
