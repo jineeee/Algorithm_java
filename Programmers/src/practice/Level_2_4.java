@@ -11,7 +11,7 @@ package practice;
 
 import java.util.Stack;
 
-public class SkillCheck_2_4 {
+public class Level_2_4 {
 	
 	static boolean solution(String s) {
         boolean answer = false;

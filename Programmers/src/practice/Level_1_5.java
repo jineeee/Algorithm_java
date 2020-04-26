@@ -10,7 +10,7 @@ package practice;
 	- s는 0으로 시작하지 않습니다.
  */
 
-public class SkillCheck_1_5 {
+public class Level_1_5 {
 	static String s = "+1234";
 	
 	static public int solution(String s) {

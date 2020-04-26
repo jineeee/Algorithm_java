@@ -8,7 +8,7 @@ package practice;
 	- 0은 짝수입니다.
  */
 
-public class SkillCheck_1_6 {
+public class Level_1_6 {
 	
 	static public String solution(int num) {
 	      String answer = "";

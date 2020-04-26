@@ -10,7 +10,7 @@ import java.util.Comparator;
  * 예를 들어 strings가 [sun, bed, car]이고 n이 1이면 각 단어의 인덱스 1의 문자 u, e, a로 strings를 정렬합니다.
  */
 
-public class SkillCheck_1_1 {
+public class Level_1_1 {
 	public String[] solution(String[] strings, int n) {
 		
 		String[] answer = {};

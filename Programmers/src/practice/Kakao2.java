@@ -4,7 +4,7 @@ package practice;
  * 프로그래머스 2018 카카오 공채 - 비밀지도
  */
 
-public class SkillCheck_1_4 {
+public class Kakao2 {
 	
 	static int n=6;
 	static int[] a1 = {46, 33, 33 ,22, 31, 50};

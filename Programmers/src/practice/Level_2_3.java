@@ -8,7 +8,7 @@ import java.util.Queue;
  * https://programmers.co.kr/skill_checks/123839
  */
 
-public class SkillCheck_2_3 {
+public class Level_2_3 {
 	
 	static public int[] solution(int m, int n, int[][] picture) {
 	      int numberOfArea = 0;

@@ -10,7 +10,7 @@ package practice;
  * - 곱할 수 있는 배열만 주어집니다.
  */
 
-public class SkillCheck_2_2 {
+public class Level_2_2 {
 	
 	public int[][] solution(int[][] arr1, int[][] arr2) {
 		int[][] answer = new int[arr1.length][arr2[0].length];
