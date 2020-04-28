@@ -3,7 +3,7 @@ package practice;
 import java.util.PriorityQueue;
 
 /*
- * 프로그래머스 스킬체크 2단계
+ * 프로그래머스 Level 2
  * https://programmers.co.kr/learn/courses/30/lessons/42626
  */
 

@@ -1,7 +1,7 @@
 package practice;
 
 /*
- * 프로그래머스 스킬체크 2단
+ * 프로그래머스 Level 2
  * https://programmers.co.kr/skill_checks/123820
  * 2차원 행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하는 함수, solution을 완성해주세요.
  * 제한 조건

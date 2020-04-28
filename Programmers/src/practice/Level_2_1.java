@@ -1,7 +1,7 @@
 package practice;
 
 /*
- * 프로그래머스 스킬체크 2단계
+ * 프로그래머스 Level 2
  * https://programmers.co.kr/skill_checks/123820
  * 두 수의 최소공배수(Least Common Multiple)란 입력된 두 수의 배수 중 공통이 되는 가장 작은 숫자를 의미합니다. 
  * 예를 들어 2와 7의 최소공배수는 14가 됩니다. 
