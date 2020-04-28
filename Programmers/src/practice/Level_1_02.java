@@ -7,7 +7,7 @@ package practice;
  * 소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.(1은 소수가 아닙니다.)
  */
 
-public class Level_1_2 {
+public class Level_1_02 {
 	
 	static public int solution(int n) {
 	      int answer = 0;
