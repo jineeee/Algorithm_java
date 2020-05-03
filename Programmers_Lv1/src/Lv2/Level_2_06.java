@@ -5,7 +5,7 @@ package Lv2;
  * https://programmers.co.kr/learn/courses/30/lessons/12977
  */
 
-public class Level_2_6 {
+public class Level_2_06 {
 	
 	static public int solution(int[] nums) {
         int answer = 0;

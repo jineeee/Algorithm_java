@@ -11,7 +11,7 @@ package Lv2;
 
 import java.util.Stack;
 
-public class Level_2_4 {
+public class Level_2_04 {
 	
 	static boolean solution(String s) {
         boolean answer = false;

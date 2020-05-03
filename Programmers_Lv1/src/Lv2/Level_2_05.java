@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  */
 
 
-public class Level_2_5 {
+public class Level_2_05 {
 	
 	static public int solution(int[] scoville, int K) {
         int answer = 0;

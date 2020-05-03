@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 프로그래머스 Level 2
  */
 
-public class Level_2_7 {
+public class Level_2_07 {
 	
 	static public String solution(String s) {
 	      String answer = "";
