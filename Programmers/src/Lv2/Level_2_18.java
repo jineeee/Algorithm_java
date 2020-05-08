@@ -2,7 +2,9 @@ package Lv2;
 
 import java.util.*;
 
-/*
+/* 카카오 닉네임 - hashmap을 이용하여 문자열 처리
+ * https://programmers.co.kr/learn/courses/30/lessons/42888
+ * 
  * ["Enter uid1234 Muzi", 
  * 	"Enter uid4567 Prodo",
  * 	"Leave uid1234",
@@ -28,13 +30,6 @@ public class Level_2_18 {
         	if(record[i].split(" ")[0].equals("Change"))
         		map.put(record[i].split(" ")[1], record[i].split(" ")[2]);
         }
-        System.out.println(map.toString());
-        
-//        for(int i=0; i<rec.length; i++) {
-//        	for(int j=0; j<3; j++) {
-//        		System.out.print(String.valueOf(rec[i][j]));
-//        	}System.out.println();
-//        }
         
         for (int i = 0; i < rec.length; i++) {
         	if(record[i].split(" ")[0].equals("Enter"))
@@ -42,7 +37,7 @@ public class Level_2_18 {
         	if(record[i].split(" ")[0].equals("Leave"))
         		answerList.add(map.get(record[i].split(" ")[1]) + "님이 나갔습니다.");
 		}
-        System.out.println(answerList);
+
         String[] answer = new String[answerList.size()];
         for (int i = 0; i < answerList.size(); i++) {
         	answer[i] = answerList.get(i);

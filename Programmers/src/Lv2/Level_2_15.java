@@ -1,5 +1,9 @@
 package Lv2;
 
+/*
+ * 카카오 문자열 압축 - 문자열 자르기, 비교하기
+ * https://programmers.co.kr/learn/courses/30/lessons/60057
+ */
 public class Level_2_15 {
 	
 	static public int solution(String s) {
