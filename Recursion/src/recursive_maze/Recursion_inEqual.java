@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/*
+ * 재귀 - 부등호를 만족하는 수 구하기
+ * https://haejun0317.tistory.com/99
+ */
+
 public class Recursion_inEqual {
 	static int n; // 부등호의 개수
 	static String[] equal; // 부등호를 잘라서 넣을 배열

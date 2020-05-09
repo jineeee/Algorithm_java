@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/*
+ * 재귀 - 괄호의 경우 모두 구하기 
+ * https://usage.tistory.com/18
+ */
 public class Recursion_bracket {
 	static int n;
 	static String[] result;

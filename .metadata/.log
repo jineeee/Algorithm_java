@@ -1682,3 +1682,16 @@ Java Model Exception: Java Model Status [<project root> [in BinarySearch] is not
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1006 2020-05-08 17:02:50.611
 !MESSAGE <project root> [in BinarySearch] is not on its project's build path
+
+!ENTRY com.genuitec.eclipse.webclipse.evergreen 4 0 2020-05-09 13:54:15.945
+!MESSAGE Unable to parse manifest from http://www.genuitec.com/updates/devstyle/ci/devstyle.json
+!STACK 0
+Unexpected character (<) at position 0.
+	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
+	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
+	at com.genuitec.eclipse.webclipse.evergreen.manifest.EvergreenManifestCache.updateManifestFromServer(EvergreenManifestCache.java:101)
+	at com.genuitec.eclipse.webclipse.evergreen.internal.EvergreenManifestManager$ManifestUpdateJob.run(EvergreenManifestManager.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

@@ -4,7 +4,7 @@ package Lv2;
  * 카카오 문자열 압축 - 문자열 자르기, 비교하기
  * https://programmers.co.kr/learn/courses/30/lessons/60057
  */
-public class Level_2_15 {
+public class Kakao1 {
 	
 	static public int solution(String s) {
         int answer = 1000; // 문자열의 최대 길이가 1000

@@ -7,7 +7,7 @@ import java.util.regex.*;
  * 카카오 뉴스 클러스터링 - 문자열 잘라서 이용, 정규식, 교집합, 합집합
  * https://programmers.co.kr/learn/courses/30/lessons/17677
  */
-public class Level_2_17 {
+public class Kakao2 {
 	
 	static public int solution(String str1, String str2) {
 	      List<String> list1 = new ArrayList<String>();

@@ -4,15 +4,20 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/*
+ * 백준 수 찾기 - 이분탐색 
+ * https://www.acmicpc.net/problem/1920
+ */
+
 public class BOJ1920 {
 	static int[] array1;
 	static int[] array2;
-	static int num1;
-	static int num2;
+	static int num1,num2;
 	static int s,e,m;
 	
 	static int getResult(int n) {
 		int status = 0;
+		
 		if(n<array1[0] || n>array1[num1-1]) return status;
 		
 		s = 0;
@@ -29,6 +34,7 @@ public class BOJ1920 {
 				s=m+1;
 			}
 		}
+		
 		return status;
 	}
 
