@@ -26,6 +26,6 @@ public class BOJ10162 {
 			countC++;
 		}
 		if(T!=0) System.out.print(-1);
-		System.out.print(countA + " " + countB + " " + countC);
+		else System.out.print(countA + " " + countB + " " + countC);
 	}
 }
