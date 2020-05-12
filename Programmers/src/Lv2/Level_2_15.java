@@ -1,38 +1,42 @@
 package Lv2;
 
-import java.util.*;
-
 /*
- * https://programmers.co.kr/learn/courses/30/lessons/43165
+ * 스킬트리 - 문자열 비교
+ * https://programmers.co.kr/learn/courses/30/lessons/49993
  */
 
 public class Level_2_15 {
-	static List<String> symboList  = new ArrayList<String>();
-	static List<String> result = new ArrayList<String>();
 	
-	static public int solution(int[] numbers, int target) {
-        int answer = 0;
-        int len = numbers.length;
-        symboList.add("+");
-        symboList.add("-");
+	
+	static public int solution(String skill, String[] skill_trees) {
+        int answer = skill_trees.length;
         
-        permutation(symboList, result, len);
+        for(int i=0; i<skill_trees.length; i++) {
+        	boolean flag = true;
+        	int cnt =0;
+        	String[] skillTreeArr = skill_trees[i].split(""); 
+        	
+        	for(int j=0; j<skillTreeArr.length; j++){
+        		int nowSkill = skill.indexOf(skillTreeArr[j]); // 스킬트리 중 현재 탐색중인 스킬이 단계상 몇번째인지
+                if(cnt < nowSkill){ // 현재 탐색중인 스킬의 순서가 완료한 스킬 갯수를 넘으면 탐색 중지
+                    flag = false;
+                    break;
+                }else if(cnt == nowSkill) { // 현재 탐색중인 스킬의 순서가 완료한 스킬 갯수와 같으면 다음 스킬 탐색
+                    cnt++;
+                }
+            }
+
+            if(flag){ // 위의 단계를 true로 통과했으면 정답
+                answer++;
+            }
+        }
+        System.out.println(answer);
+        
         return answer;
     }
-
-	static void permutation(List<String> sym, List<String> result, int len) {
-		if(len==0) {
-			System.out.print(result);
-		}
-		for (int i = 0; i < len; i++) {
-			result.add(sym.remove(i));
-			permutation(sym, result, len - 1);
-			sym.add(i, result.remove(result.size() - 1));
-		}
-	}
 	
 	public static void main(String[] args) {
-		int[] num = {1, 1, 1, 1, 1};
-		solution(num, 3);
+		String[] s = {"BACDE", "CBADF", "AECB", "BDA"};
+		solution("CBD", s);
 	}
 }

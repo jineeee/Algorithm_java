@@ -2,9 +2,14 @@ package week1;
 
 import java.util.*;
 
+/* 
+ * 연구소 - 조합, BFS
+ * https://www.acmicpc.net/problem/14502
+ */
+
 public class BOJ14502 {
 	static int N, M;
-	static int[][] map, copy;
+	static int[][] map;
 	static int[] dx = { 0, 1, 0, -1 };
     static int[] dy = { 1, 0, -1, 0 };
     static int answer = 0;
@@ -13,10 +18,10 @@ public class BOJ14502 {
 		Scanner scanner = new Scanner(System.in);
 		N = scanner.nextInt();
 		M = scanner.nextInt();
-		map = copy =  new int[N][M];
+		map =  new int[N][M];
 		for(int i=0; i< N; i++){
 			for(int j=0; j<M; j++) {
-				copy[i][j] = map[i][j] = scanner.nextInt();
+				map[i][j] = scanner.nextInt();
 			}
 		}
 		
@@ -31,10 +36,10 @@ public class BOJ14502 {
 		}
 		for(int i=0; i< N; i++){
 			for(int j=0; j<M; j++) {
-				if(copy[i][j]==0) { // 벽이 아니라면
-					copy[i][j] = 1; // 벽을 세움
+				if(map[i][j]==0) { // 벽이 아니라면
+					map[i][j] = 1; // 벽을 세움
 					makeWall(cnt+1); // 다음 벽을 세우기 위해 재귀 호출
-					copy[i][j] = 0;  // 재귀 함수 종료 후 배열 복구를 위해 벽을 없앰
+					map[i][j] = 0;  // 재귀 함수 종료 후 배열 복구를 위해 벽을 없앰
 				}
 			}
 		}
@@ -45,7 +50,7 @@ public class BOJ14502 {
 		int[][] virus = new int[N][M];
 		for(int i=0; i< N; i++){
 			for(int j=0; j<M; j++) {
-				virus[i][j] = copy[i][j]; // 바이러스가 감염된 지도를 만들기 위해 벽이 세워진 배열을 복사
+				virus[i][j] = map[i][j]; // 바이러스가 감염된 지도를 만들기 위해 벽이 세워진 배열을 복사
 				if(virus[i][j]==2) queue.offer(new Loc(i, j));
 			}
 		}
