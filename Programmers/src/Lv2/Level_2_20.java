@@ -3,9 +3,10 @@ package Lv2;
 import java.util.*;
 
 /*
- * 소수 찾기 - 길이가 달라지는 순열
- * 
+ * 소수 찾기 - 길이가 달라지는 순열, 소수
+ * https://programmers.co.kr/learn/courses/30/lessons/42839
  */
+
 public class Level_2_20 {
 	static String[] num;
 	static Set<Integer> set = new HashSet<Integer>();
@@ -26,11 +27,9 @@ public class Level_2_20 {
 	
 	static void permutation(int len, int current, String[] result, boolean[] visited) {
 		if(len==current) {
-//			System.out.println(Arrays.toString(result));
 			String temp = "";
 			for(String string : result) temp += string;
 			set.add(Integer.parseInt(temp));
-//			System.out.println(set);
 		} else {
 			for(int i=0; i<num.length; i++) { // len 길이만큼 전체 배열을 탐색하며 숫자를 만듬
 				if (!visited[i]) {
