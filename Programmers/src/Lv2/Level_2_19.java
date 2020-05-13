@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /*
- * 가장 큰 수 - 순열
+ * 가장 큰 수 - comparator, 문자열 비교
  * https://programmers.co.kr/learn/courses/30/lessons/42746
  */
 public class Level_2_19 {
@@ -52,15 +52,19 @@ public class Level_2_19 {
 				return (o2+o1).compareTo(o1+o2);
 			}		
 		});
-		String a = "106";
-		String b = "610";
-		System.out.println(Arrays.toString(strNum));
-		System.out.print(a.compareTo(b));
-		return answer;
+
+		//0000 처럼 0으로만 구성되어있으면 0 return
+        if (strNum[0].equals("0")) return "0";
+        
+        //그 외의 경우 순차적으로 연결하여 answer return
+        for (int i = 0; i < strNum.length; i++) {
+            answer+=strNum[i];
+        }
+        return answer;
 	}
 
 	public static void main(String[] args) {
-		int[] temp = {6, 110, 2};
+		int[] temp = {6, 10, 2};
 		solution(temp);
 	}
 }
