@@ -10,13 +10,10 @@ public class Level_2_22 {
         Arrays.sort(A); // 오름차순으로 정렬
         for(int i : B)  list.add(i);
         Collections.sort(list, Collections.reverseOrder());
-        System.out.println(Arrays.toString(A));
-        System.out.println(list);
         
         for(int i=0; i<A.length; i++) {
         	answer += A[i]*list.get(i);
         }
-        System.out.println(answer);
 		return answer;
     }
 	
