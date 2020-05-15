@@ -17,8 +17,8 @@ public class Level_2_23 {
         	}
         }
         System.out.println(x + " " + y);
-        answer[0] = x;
-        answer[1] = y;
+        answer[0] = Math.max(x, y);
+        answer[1] = Math.min(x, y);
         return answer;
     }
 	
