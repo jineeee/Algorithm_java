@@ -18,6 +18,7 @@ public class BOJ2477 {
 			if(i%2==0) w = Math.max(w, map[i]);
 			else h = Math.max(h, map[i]);
 		}
+//		System.out.println(Arrays.toString(map));
 		
 		for(int i=0; i<6; i++) {
 			if (i % 2 == 0) {
