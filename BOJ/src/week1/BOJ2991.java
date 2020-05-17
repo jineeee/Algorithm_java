@@ -2,6 +2,11 @@ package week1;
 
 import java.util.Scanner;
 
+/*
+ * 백준 사나운 개 - 경우의 수를 나눠 계산
+ * https://www.acmicpc.net/problem/2991
+ */
+
 public class BOJ2991 {
 
 	public static void main(String[] args) {
@@ -16,10 +21,8 @@ public class BOJ2991 {
 		int pAns=0, mAns=0, nAns=0;
 		
 		int temp = p%(a+b);
-//		System.out.println(temp);
 		if(temp<=a && temp!=0) pAns++;
 		temp = p%(c+d);
-//		System.out.println(temp);
 		if(temp<=c && temp!=0) pAns++;
 		
 		temp = m%(a+b);
@@ -28,15 +31,9 @@ public class BOJ2991 {
 		if(temp<=c && temp!=0) mAns++;
 		
 		temp = n%(a+b);
-		if(temp<=a && temp!=0) {
-			nAns++;
-//			System.out.println(1);
-		}
+		if(temp<=a && temp!=0) nAns++;
 		temp = n%(c+d);
-		if(temp<=c && temp!=0) {
-			nAns++;
-//			System.out.println(3);
-		}
+		if(temp<=c && temp!=0) nAns++;
 		
 		System.out.println(pAns);
 		System.out.println(mAns);
