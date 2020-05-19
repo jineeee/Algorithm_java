@@ -1,5 +1,3 @@
-package recursive_maze;
-
 public class Recursion_blob {
 	/*
      * blob의 크기를 구하려면

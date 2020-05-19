@@ -1,5 +1,3 @@
-package recursive_maze;
-
 public class Recursion_NQueens {
 	/*
      * 모든 조건을 만족하는 방법을 찾으려면

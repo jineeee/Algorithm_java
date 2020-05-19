@@ -1,5 +1,3 @@
-package recursive_maze;
-
 public class Recursion_powerSet {
 	
 	private static char data[] = {'a','b','c','d','e','f'};

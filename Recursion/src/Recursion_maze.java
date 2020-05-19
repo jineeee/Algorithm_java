@@ -1,5 +1,3 @@
-package recursive_maze;
-
 public class Recursion_maze {
 	/*
      * 현재 위치에서 출구까지 가는 경로가 있으려면

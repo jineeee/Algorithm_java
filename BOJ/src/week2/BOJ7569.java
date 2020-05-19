@@ -2,6 +2,11 @@ package week2;
 
 import java.util.*;
 
+/*
+ * 백준 토마토 - 3차원 배열, bfs
+ * https://www.acmicpc.net/problem/7569
+ */
+
 public class BOJ7569 {
 	static int m, n, h;
 	static int[][][] box;
@@ -34,16 +39,6 @@ public class BOJ7569 {
 		}
 		
 		System.out.println(bfs());
-		
-//		System.out.println("------------------");
-//		for(int i=0; i<h; i++) {
-//			for(int j=0; j<n; j++) {
-//				for(int k=0; k<m; k++) {
-//					System.out.print(box[i][j][k] + " ");
-//				}System.out.println();
-//			}System.out.println();
-//		}
-		
 	}
 	
 	static int bfs() {
