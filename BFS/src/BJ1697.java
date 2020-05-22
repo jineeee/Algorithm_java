@@ -2,6 +2,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+/*
+ * 백준 숨바꼭질
+ * https://www.acmicpc.net/problem/1697
+ */
+
 public class BJ1697 {
 	static int N;
 	static int K;

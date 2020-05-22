@@ -2,6 +2,11 @@ package week2;
 
 import java.util.*;
 
+/*
+ * 백준 연구소 3 - bfs, 조합
+ * https://www.acmicpc.net/problem/17142
+ */
+
 class Point{
 	int x,y;
 	Point(int x, int y){

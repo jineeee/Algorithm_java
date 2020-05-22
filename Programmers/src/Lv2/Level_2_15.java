@@ -7,9 +7,8 @@ package Lv2;
 
 public class Level_2_15 {
 	
-	
 	static public int solution(String skill, String[] skill_trees) {
-        int answer = skill_trees.length;
+        int answer = 0;
         
         for(int i=0; i<skill_trees.length; i++) {
         	boolean flag = true;
