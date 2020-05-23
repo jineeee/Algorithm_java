@@ -3,6 +3,11 @@ package week2;
 import java.io.*;
 import java.util.*;
 
+/*
+ * 벡준 영역 구하기 - 재귀, dfs
+ * https://www.acmicpc.net/problem/2583
+ */
+
 public class BOJ2583 {
 	static int m,n,k,minX, minY, maxX, maxY, result;
 	static int[][] map, square;
