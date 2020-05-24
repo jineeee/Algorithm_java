@@ -1,8 +1,13 @@
 import java.util.*;
 
+/*
+ * 백준 미세먼지 안녕! - bfs, 시계/반시계 방향으로 배열 이동
+ * https://www.acmicpc.net/problem/17144
+ */
+
 public class BOJ17144 {
-	static int[] dx = {0,0,1,-1};
-	static int[] dy = {-1,1,0,0};
+	static int[] dx = {-1,1,0,0};
+	static int[] dy = {0,0,1,-1};
 	static int[] ccw = { 2, 0, 3, 1 }; // 반시계(counter-clockwise)
 	static int[] cw = { 2, 1, 3, 0 }; // 시계(clockwise)
 	static int r,c,t;
@@ -20,33 +25,26 @@ public class BOJ17144 {
 		for(int i=0; i<r; i++) {
 			for(int j=0; j<c; j++) {
 				map[i][j] = scanner.nextInt();
-				if(map[i][j]==-1) list.add(new Point(j,i));
+				if(map[i][j]==-1) list.add(new Point(i,j));
 			}
 		}
-//		System.out.println("------------------");
 		bfs();
-//		System.out.println("------------------");
-//		for(int i=0; i<r; i++) {
-//			for(int j=0; j<c; j++) {
-//				System.out.print(map[i][j] + " ");
-//			}System.out.println();
-//		}
+		System.out.print(getAns());
 	}
 	
 	static void bfs() {
 		for(int k=0; k<t; k++) {
 			
 			for(int i=0; i<r; i++) {
-				for(int j=0; j<c; j++) {
+				for(int j=0; j<c; j++)  {
+					copyMap[i][j] = map[i][j];
 					if(map[i][j]>4) queue.offer(new Point(i, j));
 				}
 			}
 
 			while(!queue.isEmpty()) {
 				Point now = queue.poll();
-//				System.out.println(now.x + " " + now.y);
-				int dust = map[now.x][now.y]/5;
-//				System.out.println(dust);
+				int dust = copyMap[now.x][now.y]/5;
 				int sum = 0;
 				for(int i=0; i<4; i++) {
 					int nx = now.x + dx[i];
@@ -58,44 +56,44 @@ public class BOJ17144 {
 				}
 				map[now.x][now.y] -= sum;
 			}
-			System.out.println("---------------------");
-				for(int i=0; i<r; i++) {
-					for(int j=0; j<c; j++) {
-						System.out.print(map[i][j] + " ");
-					}System.out.println();
-				}
-			for(int i=0; i<r; i++) {
-				for(int j=0; j<c; j++) {
-					copyMap[i][j] = map[i][j];
-				}
-			}
-			
-			cleanAir(list.get(0).y, list.get(0).x, ccw);
-			cleanAir(list.get(1).y, list.get(1).x, cw);
-//			System.out.println("------------------");
-//			for(int i=0; i<r; i++) {
-//				for(int j=0; j<c; j++) {
-//					System.out.print(map[i][j] + " ");
-//				}System.out.println();
-//			}
+			copyMap();
+			cleanAir(list.get(0).x, list.get(0).y, ccw);
+			cleanAir(list.get(1).x, list.get(1).y, cw);
+
 		}
 	}
 	
 	static void cleanAir(int cleanerX, int cleanerY, int[] direction) {
-		int x = cleanerX+1; //2
-		int y = cleanerY; //0+1
-		map[y][x] = 0;
+		int x = cleanerX; //2
+		int y = cleanerY+1; //0+1
+		map[x][y] = 0;
 		for (int k = 0; k < 4; k++) {
 			while (true) {
 		        int nx = x + dx[direction[k]];
 		        int ny = y + dy[direction[k]];
 
-		        if (0>ny || ny>=r || 0>nx || nx>=c) break;
+		        if (0>ny || ny>=c || 0>nx || nx>=r) break;
 		        if (cleanerY == ny && cleanerX == nx) break;
-		        map[ny][nx] = copyMap[y][x];
+		        map[nx][ny] = copyMap[x][y];
 		        y = ny;
 		        x = nx;
 		     }
 		}
+	}
+	static void copyMap() {
+		for(int i=0; i<r; i++) {
+			for(int j=0; j<c; j++) {
+				copyMap[i][j] = map[i][j];
+			}
+		}
+	}
+	static int getAns() {
+		int ans = 0;
+		for(int i=0; i<r; i++) {
+			for(int j=0; j<c; j++) {
+				if(map[i][j]>0) ans += map[i][j];
+			}
+		}
+		return ans;
 	}
 }
