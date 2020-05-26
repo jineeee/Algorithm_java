@@ -6,6 +6,7 @@ import java.util.*;
  * 백준 치킨배달 - 배열, 리스트 다루기
  * https://www.acmicpc.net/problem/15686
  */
+
 class Point{
 	int x,y;
 	Point(int x, int y){
