@@ -2,6 +2,10 @@ package week3;
 
 import java.util.*;
 
+/* 백준 나무재테크 - linkedList
+ * https://www.acmicpc.net/problem/16235
+ */
+
 class Tree implements Comparable<Tree>{
 	int x, y, age, death;
 	public Tree(int x, int y, int age, int death) {
@@ -19,8 +23,8 @@ class Tree implements Comparable<Tree>{
 public class BOJ16235 {
 	static int n, m, k;
 	static int[][] map, yang;
-	static List<Tree> trees = new ArrayList<Tree>();
-	static List<Tree> newTrees = new ArrayList<Tree>();
+	static List<Tree> trees = new LinkedList<Tree>();
+	static List<Tree> newTrees = new LinkedList<Tree>();
 	static int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
     static int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
 
@@ -36,20 +40,21 @@ public class BOJ16235 {
 				map[i][j] = 5;
 				yang[i][j]=scanner.nextInt();
 			}
-		for(int i=0; i<m; i++)
-			trees.add(new Tree(scanner.nextInt()-1, scanner.nextInt()-1, scanner.nextInt(), 1));
-
+		for(int i=0; i<m; i++) {
+			int x = scanner.nextInt()-1;
+			int y = scanner.nextInt()-1;
+			trees.add(new Tree(x, y, scanner.nextInt(), 1));
+		}
+		
 		for(int i=0; i<k; i++) {
 			trees.sort(null);
-			System.out.println(trees.size());
+			
 			// 봄
 			for(Tree t : trees) {
 				if(map[t.x][t.y]>=t.age) {
 					map[t.x][t.y] -= t.age;
 					t.age++;
-				}else {
-					t.death = 0;
-				}
+				}else t.death = 0;
 			}
 			
 			//여름
@@ -61,7 +66,7 @@ public class BOJ16235 {
 					it.remove();
 				}
 			}
-			
+
 			//가을
 			for(Tree t : trees) {
 				if(t.age%5==0) {
@@ -74,9 +79,10 @@ public class BOJ16235 {
 				}
 			}
 			trees.addAll(0,newTrees);
+			newTrees.clear();
 			
 			if(i==k-1) {
-//				System.out.print(trees.size());
+				System.out.print(trees.size());
 				break;
 			}
 			
@@ -87,6 +93,5 @@ public class BOJ16235 {
 				}
 			}
 		}
-//		System.out.print(trees.size());
 	}
 }
