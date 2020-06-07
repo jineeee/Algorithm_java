@@ -46,7 +46,6 @@ public class BJ1012 {
 					}
 				}
 			}
-//			
 			System.out.println(warm);
 		}
 	}
