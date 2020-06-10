@@ -17,7 +17,6 @@ public class BOJ1260 {
 		Scanner scanner = new Scanner(System.in);
 		N = scanner.nextInt();
 		for(int i=0; i<=N; i++) list.add(new LinkedList<Integer>());
-		for(int i=1; i<=N; i++) Collections.sort(list.get(i));
 		visit = new boolean[N+1];
 		M = scanner.nextInt();
 		V = scanner.nextInt();
@@ -27,6 +26,7 @@ public class BOJ1260 {
 			list.get(a).add(b);
 			list.get(b).add(a);
 		}
+		for(int i=1; i<=N; i++) Collections.sort(list.get(i));
 		bfs();
 	}
 	
