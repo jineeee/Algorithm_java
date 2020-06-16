@@ -1,7 +1,12 @@
-package week6;
+
 
 import java.io.*;
 import java.util.*;
+
+/*
+ * 백준 최단경로 - 다익스트라 알고리즘, 그래프
+ * https://www.acmicpc.net/problem/1753
+ */
 
 class Node{
 	int idx, weight;
@@ -46,19 +51,18 @@ public class BOJ1753 {
 	}
 	
 	static void getResult() {
+		// 가중치가 작은 순서로 정렬하기 위해 우선순위 큐 사용
 		PriorityQueue<Node> pQueue = new PriorityQueue<Node>( new Comparator<Node>() {
 			@Override
-			public int compare(Node o1, Node o2) {
+			public int compare(Node o1, Node o2) { // 정렬 기준 정의
 				return o1.weight-o2.weight;
 			}
-		}); // 가중치가 작은 순서로 정렬하기 위해 우선순위 큐 사용
+		});
 		dist[start] = 0;
 		pQueue.add(new Node(start, 0)); // 시작 노드를 큐에 넣어줌
 		
 		while (!pQueue.isEmpty()) {
 			Node nowNode = pQueue.poll();
-			
-			if(dist[nowNode.idx]<nowNode.weight) continue;
 			
 			for(Node node : list[nowNode.idx]) { // 현재 노드와 인접한 노드 탐색
 				if(dist[node.idx] > dist[nowNode.idx]+node.weight) { // 인접 노드까지의 경로가 현재 노드+인접노드 가중치보다 크다면
