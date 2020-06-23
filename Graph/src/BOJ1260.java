@@ -1,4 +1,4 @@
-package week5;
+
 
 import java.util.*;
 
@@ -27,6 +27,9 @@ public class BOJ1260 {
 			list.get(b).add(a);
 		}
 		for(int i=1; i<=N; i++) Collections.sort(list.get(i));
+		dfs(V);
+		System.out.print("\n");
+		Arrays.fill(visit, false);
 		bfs();
 	}
 	
@@ -43,6 +46,14 @@ public class BOJ1260 {
 				queue.offer(next);
 				visit[next] = true;
 			}
+		}
+	}
+	
+	static void dfs(int v) {
+		System.out.print(v + " ");
+		visit[v] = true;
+		for(int i : list.get(v)) {
+			if(!visit[i]) dfs(i);
 		}
 	}
 }
