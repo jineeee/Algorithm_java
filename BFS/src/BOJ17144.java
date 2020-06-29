@@ -12,8 +12,8 @@ public class BOJ17144 {
 	static int[] cw = { 2, 1, 3, 0 }; // 시계(clockwise)
 	static int r,c,t;
 	static int[][] map, copyMap;
-	static Queue<Point> queue = new LinkedList<Point>();
-	static List<Point> list = new ArrayList<Point>();
+	static Queue<Night> queue = new LinkedList<Night>();
+	static List<Night> list = new ArrayList<Night>();
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -25,7 +25,7 @@ public class BOJ17144 {
 		for(int i=0; i<r; i++) {
 			for(int j=0; j<c; j++) {
 				map[i][j] = scanner.nextInt();
-				if(map[i][j]==-1) list.add(new Point(i,j));
+				if(map[i][j]==-1) list.add(new Night(i,j));
 			}
 		}
 		bfs();
@@ -38,12 +38,12 @@ public class BOJ17144 {
 			for(int i=0; i<r; i++) {
 				for(int j=0; j<c; j++)  {
 					copyMap[i][j] = map[i][j];
-					if(map[i][j]>4) queue.offer(new Point(i, j));
+					if(map[i][j]>4) queue.offer(new Night(i, j));
 				}
 			}
 
 			while(!queue.isEmpty()) {
-				Point now = queue.poll();
+				Night now = queue.poll();
 				int dust = copyMap[now.x][now.y]/5;
 				int sum = 0;
 				for(int i=0; i<4; i++) {

@@ -21,8 +21,8 @@ public class BOJ17142 {
 	static int[] dx = { 0, 1, 0, -1 };
     static int[] dy = { 1, 0, -1, 0 };
     static int answer = 9999;
-    static List<Point> point= new ArrayList<Point>();
-    static Point[] virusPoint;
+    static List<Night> point= new ArrayList<Night>();
+    static Night[] virusPoint;
     static boolean[] virusVisit;
 
 	public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class BOJ17142 {
 				int num = scanner.nextInt();
 				if(num==1) map[i][j] = -1;
 				else if(num==2) {
-					point.add(new Point(i, j));
+					point.add(new Night(i, j));
 					map[i][j] = -2;
 				}
 				else if(num==0) {
@@ -49,7 +49,7 @@ public class BOJ17142 {
 			return;
 		}
 		
-		virusPoint = new Point[m]; // 활성 바이러스를 담을 배열
+		virusPoint = new Night[m]; // 활성 바이러스를 담을 배열
 		virusVisit = new boolean[point.size()]; // 중복 방지를 위한 배열
 		
 		activeVirus(0,0);
@@ -75,7 +75,7 @@ public class BOJ17142 {
 	
 	static void bfs() {
 		int wallCnt=0;
-		Queue<Point> queue = new LinkedList<Point>();
+		Queue<Night> queue = new LinkedList<Night>();
 		int[][] virus = new int[n][n]; // 바이러스를 퍼트릴 배열
 		for(int i=0; i<n; i++) {
 			for(int j=0; j<n; j++) {
@@ -90,18 +90,18 @@ public class BOJ17142 {
 
 		while (!queue.isEmpty()) {
 			
-			Point now = queue.poll();
+			Night now = queue.poll();
 			for(int i=0; i<4; i++) {
 				int nx = now.x + dx[i];
 				int ny = now.y + dy[i];
 				if(nx<0 || ny<0 || nx>=n || ny>=n || virus[nx][ny]==-1) continue;
 				if(virus[nx][ny]==-3) { // 빈 칸일 경우 바이러스 감염
 					wallCnt--;
-					queue.offer(new Point(nx, ny));
+					queue.offer(new Night(nx, ny));
 					virus[nx][ny] = virus[now.x][now.y] + 1;
 				}
 				else if(virus[nx][ny]==-2) { // 비활성 바이러스일 경우 활성 바이러스로 변경
-					queue.offer(new Point(nx, ny));
+					queue.offer(new Night(nx, ny));
 					virus[nx][ny] = virus[now.x][now.y] + 1;
 				}
 			}

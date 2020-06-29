@@ -1,4 +1,4 @@
-package week4;
+
 
 import java.io.*;
 import java.util.*;
@@ -8,9 +8,9 @@ import java.util.*;
  * https://www.acmicpc.net/problem/7562
  */
 
-class Point{
+class Night{
 	int x,y;
-	public Point(int x, int y) {
+	public Night(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -21,7 +21,7 @@ public class BOJ7562 {
 	static int[][] map;
 	static int[] dx = {-2,-1,1,2,2,1,-1,-2};
 	static int[] dy = {-1,-2,-2,-1,1,2,2,1};
-	static Point night, target;
+	static Night night, target;
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,20 +33,20 @@ public class BOJ7562 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			x = Integer.parseInt(st.nextToken());
 			y = Integer.parseInt(st.nextToken());
-			night = new Point(x, y);
+			night = new Night(x, y);
 			st = new StringTokenizer(br.readLine());
 			x = Integer.parseInt(st.nextToken());
 			y = Integer.parseInt(st.nextToken());
-			target = new Point(x, y);
+			target = new Night(x, y);
 			bfs();
 		}
 	}
 	
 	static void bfs() {
-		Queue<Point> queue = new LinkedList<Point>();
+		Queue<Night> queue = new LinkedList<Night>();
 		queue.offer(night);
 		while (!queue.isEmpty()) {
-			Point now = queue.poll();
+			Night now = queue.poll();
 			if(now.x==target.x && now.y==target.y) {
 				System.out.println(map[now.x][now.y]);
 				break;
@@ -57,7 +57,7 @@ public class BOJ7562 {
 				
 				if(nx<0 || ny<0 || nx>=N || ny>=N || map[nx][ny]!=0) continue;
 				
-				queue.offer(new Point(nx, ny));
+				queue.offer(new Night(nx, ny));
 				map[nx][ny] = map[now.x][now.y] + 1;
 			}
 		}
