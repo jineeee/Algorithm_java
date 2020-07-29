@@ -25,7 +25,6 @@ public class BOJ14888 {
 		        op[idx++] = i + 1;
 		    }
 		}
-		System.out.println(Arrays.toString(op));
 		dfs(0, 1, 0, arr[0]);
 		System.out.println(max);
 	    System.out.println(min);
