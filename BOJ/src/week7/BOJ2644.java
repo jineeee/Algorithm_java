@@ -2,6 +2,11 @@ package week7;
 
 import java.util.*;
 
+/*
+ * 촌수계산 - bfs
+ * https://www.acmicpc.net/problem/2644
+ */
+
 public class BOJ2644 {
 	static int n, m, t1, t2;
 	static int[][] map;
@@ -26,7 +31,8 @@ public class BOJ2644 {
 //			System.out.println();
 //		}
 		bfs();
-		if(res[t2]==0) System.out.print(-1);
+		if (t1==t2) System.out.print(0);
+		else if(res[t2]==0) System.out.print(-1);
 		else System.out.print(res[t2]);
 		
 	}
