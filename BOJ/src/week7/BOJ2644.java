@@ -26,10 +26,7 @@ public class BOJ2644 {
 			int b = scanner.nextInt();
 			map[a][b] = map[b][a] = 1;
 		}
-//		for(int i=1; i<=n; i++) {
-//			for(int j=1; j<=n; j++) System.out.print(map[i][j] + " ");
-//			System.out.println();
-//		}
+
 		bfs();
 		if (t1==t2) System.out.print(0);
 		else if(res[t2]==0) System.out.print(-1);
@@ -43,9 +40,7 @@ public class BOJ2644 {
 		
 		while (!queue.isEmpty()) {
 			int now = queue.poll();
-//			System.out.println(now);
 			for(int i=1; i<=n; i++) {
-//				System.out.println(Arrays.toString(res));
 				if(map[now][i]==0 || res[i]!=0) continue;
 				res[i] = res[now]+1;
 				queue.add(i);
