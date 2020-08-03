@@ -28,7 +28,6 @@ public class Kakao2 {
         	Set<String> cnt = new HashSet<String>();
         	for(int i=low; i<=high; i++) cnt.add(gems[i]);
         	if(cnt.size()==gemCnt.size()) {
-//        		System.out.println(low + " " + high);
         		if(high-low+1<min) {
         			answer[0] = low+1;
         			answer[1] = high+1;
