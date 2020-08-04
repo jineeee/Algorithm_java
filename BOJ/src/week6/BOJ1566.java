@@ -2,6 +2,10 @@ package week6;
 
 import java.util.Scanner;
 
+/*
+ * P배열 - 실패
+ * https://www.acmicpc.net/problem/1566
+ */
 public class BOJ1566 {
 	static int n, m, ans = Integer.MAX_VALUE;
 	static int[][] arr;
