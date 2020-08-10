@@ -8,7 +8,7 @@ import java.util.Scanner;
  * https://www.acmicpc.net/problem/2110
  */
 
-public class BOJ2110 {
+public class BOJ2110_combi {
 	static int n, c, ans=Integer.MIN_VALUE;
 	static int[] home, result;
 	
