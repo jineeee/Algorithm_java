@@ -2,6 +2,11 @@ package week8;
 
 import java.util.Scanner;
 
+/*
+ * 예산 - 이진탐색
+ * https://www.acmicpc.net/problem/2512
+ */
+
 public class BOJ2512 {
 	static int N;
 	static long M;
@@ -19,7 +24,6 @@ public class BOJ2512 {
 		
 		while(s<=e) {
 			m = (s+e)/2;
-			System.out.println("s "+s+" m "+m+" e"+e);
 			long sum = 0;
 			for(int i=0; i<N; i++) {
 				if(arr[i]>=m) sum+=m;
@@ -29,12 +33,10 @@ public class BOJ2512 {
 			if(sum==M) {
 				ans=m;
 				break;
-			}
-			else if(sum<M) {
+			} else if(sum<M) {
 				ans=Math.max(ans, m);
 				s=m+1;
-			}
-			else e=m-1;
+			} else e=m-1;
 		}
 		System.out.print(ans);
 	}
