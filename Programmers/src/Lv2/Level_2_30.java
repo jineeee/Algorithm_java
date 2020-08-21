@@ -21,7 +21,6 @@ public class Level_2_30 {
 				idx++;
 			}
         }
-        
         System.out.print(answer);
         return answer;
     }
