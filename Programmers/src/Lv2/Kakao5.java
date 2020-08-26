@@ -16,8 +16,6 @@ public class Kakao5 {
 	public static String solution(String p) {
         
         String answer = makeCorrect(p);
-//        System.out.println(answer);
-        
         return answer;
     }
 	
@@ -25,8 +23,8 @@ public class Kakao5 {
 		if(p.isEmpty() || isCorrect(p)) return p;
 		
 		String u="", v="";
-		
 		int left = 0, right=0;
+		
 		for(int i=0; i<p.length(); i++) {
 			if(p.charAt(i)=='(') left++;
 			else right++;
@@ -37,7 +35,6 @@ public class Kakao5 {
 				break;
 			}
 		}
-//		System.out.println(u + " " + v);
 		
         if(isCorrect(u)) return u + makeCorrect(v);
         else {
@@ -74,7 +71,6 @@ public class Kakao5 {
 			
 			if(c=='(') stack.push(c);
 			else{
-//				System.out.println(stack.toString());
 				if(stack.isEmpty()) return false;
 				else stack.pop();
 			}
