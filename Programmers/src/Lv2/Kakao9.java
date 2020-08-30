@@ -1,7 +1,9 @@
 package Lv2;
 
-import java.util.ArrayList;
-import java.util.Collections;
+/*
+ * 카카오 n진수 게임 - 진법 변환
+ * https://programmers.co.kr/learn/courses/30/lessons/17687
+ */
 
 public class Kakao9 {
 	
@@ -11,20 +13,17 @@ public class Kakao9 {
 	
 	public static String solution(int n, int t, int m, int p) {
         String answer = "";
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         
         for(int i=0; i<t*m; i++) {
-        	if(i==0) stringBuilder.append(i);
-        	
-        	stringBuilder.append(convert(n, i));
+        	if(i==0) result.append(i);
+        	result.append(convert(n, i));
         }
-        System.out.println("sb  " + stringBuilder);
         
-        for(int i=p-1; i<stringBuilder.length(); i=i+m) {
-        	answer += stringBuilder.substring(i, i+1);
+        for(int i=p-1; i<result.length(); i=i+m) {
+        	answer += result.substring(i, i+1);
         	if(answer.length()==t) break;
         }
-        System.out.print(answer.toUpperCase());
         
         return answer.toUpperCase();
     }
@@ -36,7 +35,6 @@ public class Kakao9 {
 			sb.append(rem >= 10 ? String.valueOf((char)('A' + (rem - 10))) : rem);
 			i /= n;	
 		}
-		
 		return sb.reverse().toString();
 	}
 
