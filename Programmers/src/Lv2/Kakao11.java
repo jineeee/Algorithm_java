@@ -1,5 +1,6 @@
 package Lv2;
 
+<<<<<<< HEAD
 import java.util.*;
 
 public class Kakao11 {
@@ -92,4 +93,8 @@ public class Kakao11 {
 		int[] result= {sIdx, eIdx};
 		return result;
 	}
+=======
+public class Kakao11 {
+
+>>>>>>> f872850cbf849d4bd7f21c43dd4036904342c694
 }
