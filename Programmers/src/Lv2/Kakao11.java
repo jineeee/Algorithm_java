@@ -1,64 +1,58 @@
 package Lv2;
 
-<<<<<<< HEAD
 import java.util.*;
+
+/*
+ * 카카오 파일명 정렬 - 자바 comparator
+ * https://programmers.co.kr/learn/courses/30/lessons/17686
+ */
 
 public class Kakao11 {
 
 	public static void main(String[] args) {
-		String[] arr = {"img122222222.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
-		String[] arr2 = {"F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"};
+		String[] arr = {"img00122222222.png", "img00000999910.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
+		String[] arr2 = {"F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-00014 Tomcat", "foo9.txt","F-15","foo010 bar020.zip"};
+		String[] arr3= {"muzi1.txt", "MUZI1.txt", "muzi001.txt", "muzi1.TXT"};
 		solution(arr);
 	}
 	
 	static String[][] result;
 	
 	public static String[] solution(String[] files) {
-        result = new String[files.length][4];
+        result = new String[files.length][3];
         
         for(int i=0; i<files.length; i++) {
-        	result[i][3] = String.valueOf(i);
+        	result[i][2] = String.valueOf(i);
         	
         	int idx = getHead(files[i]);
         	result[i][0] = files[i].substring(0, idx).toLowerCase();
         	
-        	int numIdx1 = getNumber(files[i], idx)[0];
-        	int numIdx2 = getNumber(files[i], idx)[1];
-        	if(numIdx2-numIdx1 > 5) {
-        		System.out.println(numIdx2-numIdx1);
-        		result[i][1] = files[i].substring(numIdx1, numIdx1+5);
+        	int numIdx = getNumber(files[i], idx);
+        	if(numIdx-idx > 5) {
+        		result[i][1] = files[i].substring(idx, numIdx);
+        		if(result[i][1].isEmpty()) result[i][1] = "0";
         	}
-        	else if(numIdx2!=0) result[i][1] = files[i].substring(numIdx1, numIdx2);
+        	else if(numIdx!=0) result[i][1] = files[i].substring(idx, numIdx);
         	else result[i][1] = files[i].substring(idx);
-        	
-        	if(numIdx2!=0) result[i][2] = files[i].substring(numIdx2).toLowerCase();
-        	else result[i][2] = "";
+        
         	
         }
         
         Arrays.sort(result, new Comparator<String[]>() {
 			@Override
 			public int compare(String[] o1, String[] o2) {
-				if(o1[0].equals(o2[0]) && o1[1].equals(o2[1]) && o1[2].equals(o2[2])) 
-					return Integer.compare(Integer.parseInt(o1[3]), Integer.parseInt(o2[3]));
-				if(o1[0].equals(o2[0]) && o1[1].equals(o2[1])) return o1[2].compareTo(o1[2]);
-				if(o1[0].equals(o2[0])) {
-//					System.out.println("if -> " + o1[1] + " " + o2[1]);
+				if(o1[0].equals(o2[0]) && Integer.parseInt(o1[1])==Integer.parseInt(o2[1])) 
+					return Integer.compare(Integer.parseInt(o1[2]), Integer.parseInt(o2[2]));
+				if(o1[0].equals(o2[0])) 
 					return Integer.compare(Integer.parseInt(o1[1]), Integer.parseInt(o2[1]));
-				}
-				else {
-//					System.out.println("else -> " + o1[0] + " " + o2[0]);
-					return o1[0].compareTo(o2[0]);
-				}
+				else return o1[0].compareTo(o2[0]);
 			}
 		});
+        
         String[] answer = new String[result.length];
         for(int i=0; i<result.length; i++) {
-        	answer[i] = files[Integer.parseInt(result[i][3])];
-        	System.out.println(Arrays.toString(result[i]));
-//        	System.out.println(answer[i]);
+        	answer[i] = files[Integer.parseInt(result[i][2])];
         }
-        System.out.println(Arrays.toString(answer));
         return answer;
     }
 	
@@ -74,27 +68,15 @@ public class Kakao11 {
 		return idx;
 	}
 	
-	static int[] getNumber(String string, int start) {
-		int sIdx = 0, eIdx = 0;
-		boolean flag = false;
+	static int getNumber(String string, int start) {
+		int idx = 0;
 		for(int i=start; i<string.length(); i++) {
 			char temp = string.charAt(i);
 			if(temp<48 || temp>57) { // 숫자가 끝나는 시점
-				eIdx = i;
+				idx = i;
 				break;
 			}
-			if(temp!=48) {
-				if(flag) continue;
-				sIdx = i;
-				flag = true;
-			}
 		}
-		
-		int[] result= {sIdx, eIdx};
-		return result;
+		return idx;
 	}
-=======
-public class Kakao11 {
-
->>>>>>> f872850cbf849d4bd7f21c43dd4036904342c694
 }
