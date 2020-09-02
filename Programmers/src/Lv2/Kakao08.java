@@ -7,7 +7,7 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/17684
  */
 
-public class Kakao8 {
+public class Kakao08 {
 	
 	public static void main(String[] args) {
 		String string = "ABABABABABABABAB";

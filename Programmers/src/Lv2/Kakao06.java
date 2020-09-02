@@ -4,7 +4,7 @@ package Lv2;
  * https://programmers.co.kr/learn/courses/30/lessons/17679
  */
 
-public class Kakao6 {
+public class Kakao06 {
 
 	public static void main(String[] args) {
 		String[] arr = { "CCBDE", "AAADE", "AAABF", "CCBBF" };

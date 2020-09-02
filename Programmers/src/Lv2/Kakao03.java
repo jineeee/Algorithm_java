@@ -16,7 +16,7 @@ import java.util.*;
  * 	"Prodo님이 나갔습니다.", 
  * 	"Prodo님이 들어왔습니다."]
  */
-public class Kakao3 {
+public class Kakao03 {
 	
 	static public String[] solution(String[] record) {
         List<String> answerList = new ArrayList<String>();

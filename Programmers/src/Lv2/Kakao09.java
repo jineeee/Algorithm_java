@@ -5,7 +5,7 @@ package Lv2;
  * https://programmers.co.kr/learn/courses/30/lessons/17687
  */
 
-public class Kakao9 {
+public class Kakao09 {
 	
 	public static void main(String[] args) {
 		solution(16, 16, 2, 1);

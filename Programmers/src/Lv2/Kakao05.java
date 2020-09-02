@@ -7,7 +7,7 @@ package Lv2;
 
 import java.util.*;
 
-public class Kakao5 {
+public class Kakao05 {
 	
 	public static void main(String[] args) {
 		solution("()))((()");

@@ -8,7 +8,7 @@ import java.util.List;
  * https://programmers.co.kr/learn/courses/30/lessons/17680
  */
 
-public class Kakao4 {
+public class Kakao04 {
 	
 	static public int solution(int cacheSize, String[] cities) {
         int answer = 0;
