@@ -8,7 +8,7 @@ import java.util.*;
  * 해답 - https://tech.kakao.com/2020/04/01/2019-internship-test/
  */
 
-public class Kakao3 {
+public class Kakao03 {
 	static HashMap<Long, Long> room = new HashMap<Long, Long>();
 	
 	public static void main(String[] args) {

@@ -5,7 +5,7 @@ package Lv3;
  * https://programmers.co.kr/learn/courses/30/lessons/64062
  */
 
-public class Kakao1 {
+public class Kakao01 {
 
 	public static void main(String[] args) {
 		int[] arr = {2, 4, 5, 3, 2, 1, 4, 2, 5, 1};
