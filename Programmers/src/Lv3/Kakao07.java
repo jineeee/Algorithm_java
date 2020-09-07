@@ -1,7 +1,5 @@
 package Lv3;
 
-import java.util.*;
-
 /*
  * 카카오 기둥과 보 설치 - 로직 짜기
  * https://programmers.co.kr/learn/courses/30/lessons/60061
