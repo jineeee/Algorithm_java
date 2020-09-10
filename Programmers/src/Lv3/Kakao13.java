@@ -1,15 +1,14 @@
 package Lv3;
 
 import java.util.*;
+import java.util.regex.*;
+
+/*
+ * 카카오 매칭점수 - 문자열 다루기
+ * https://programmers.co.kr/learn/courses/30/lessons/42893
+ */
 
 public class Kakao13 {
-	
-	static class Page{
-		String url = "";
-		int baseScore=0, linkCnt=0;
-		Double linkScore= 0D, matchScore=0D;
-		ArrayList<Integer> links = new ArrayList<Integer>();
-	}
 	
 	public static void main(String[] args) {
 		
@@ -19,60 +18,83 @@ public class Kakao13 {
 		String[] arr2 = {"<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://careers.kakao.com/interview/list\"/>\n</head>  \n<body>\n<a href=\"https://programmers.co.kr/learn/courses/4673\"></a>#!MuziMuzi!)jayg07con&&\n\n</body>\n</html>", "<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://www.kakaocorp.com\"/>\n</head>  \n<body>\ncon%\tmuzI92apeach&2<a href=\"https://hashcode.co.kr/tos\"></a>\n\n\t^\n</body>\n</html>"};
 		solution("blind", arr1);
 	}
+	
+	static class Page{
+		String url, html;
+		int idx, baseScore=0, linkCnt=0;
+		Double linkScore= 0D, matchScore=0D;
+		ArrayList<String> exLinks = new ArrayList<String>(), inLinks = new ArrayList<String>();
+		
+		public Page(String html, String url, int baseScore, int idx) {
+			this.html = html;
+			this.url = url;
+			this.baseScore = baseScore;
+			this.idx = idx;
+		}
+		
+		// 해당 웹에 걸린 외부 링크와 해당 웹으로 들어오는 링크를 세팅
+		public void setLinks() {
+			String url = "";
+			Matcher matcher = EXTERNAL_URL.matcher(this.html);
+			while (matcher.find()) {
+				url = matcher.group(1);
+				this.exLinks.add(url);
+				if(map.containsKey(url)) {
+					map.get(url).inLinks.add(this.url);
+				}
+			}
+		}
+		
+		// 매칭점수를 계산
+		public void setMatchScore() {
+			Double totalScore = Double.valueOf(this.baseScore);
+			for(String string : inLinks) {
+				if(map.containsKey(string)) {
+					totalScore += Double.valueOf(map.get(string).baseScore) / map.get(string).exLinks.size();
+				}
+			}
+			this.matchScore = totalScore;
+		}
+	}
 
-	static HashMap<String, Integer> map = new HashMap<String, Integer>();
-	static Page[] pages2;
+    static Pattern CURRENT_URL  = Pattern.compile("<meta property=\"og:url\" content=\"https://(.+?)\"/>");
+    static Pattern EXTERNAL_URL = Pattern.compile("<a href=\"https://(.+?)\">");
+	static HashMap<String, Page> map = new HashMap<String, Page>();
 	
 	static int solution(String word, String[] pages) {
-        pages2 = new Page[pages.length];
-        
-        for(int i=0 ;i<pages2.length; i++) {
-        	map.put(findUrl(pages[i]), i);
-        }
-        System.out.println(map);
-        
-        // 각 페이지의 url을 map에 저장
+        // 페이지와 페이지 배열 생성
         for(int i=0; i<pages.length; i++) {
-        	Page nowPage = new Page();
-        	pages2[i] = nowPage;
-//        	map.put(findUrl(pages[i]), i);
-        	pages2[i].baseScore = getBaseScore(word.toLowerCase(), pages[i].toLowerCase());
-        	pages2[i].linkCnt = getLinkCnt(pages[i], i);
+        	String url = findUrl(pages[i]);
+        	int baseScore = getBaseScore(word.toLowerCase(), pages[i].toLowerCase());
+        	Page page = new Page(pages[i].toLowerCase(), url, baseScore, i);
+        	map.put(url, page);
         }
         
-        for(Page page : pages2) System.out.println(page.links);
+        for(Page page : map.values()) page.setLinks();
         
-        for(int i=0; i<pages2.length; i++) {
-        	ArrayList<Integer> link = pages2[i].links;
-        	for(int j=0; j<link.size(); j++) {
-        		if(map.containsKey(link.get(j)))
-        		pages2[i].linkScore += Double.valueOf(pages2[map.get(link.get(j))].baseScore) / Double.valueOf(pages2[map.get(link.get(j))].linkCnt);
-        	}
-        	pages2[i].matchScore = pages2[i].baseScore + pages2[i].linkScore;
-        }
-        
-        for(Page page : pages2) System.out.println(page.matchScore);
-        
-        int answer = 0;
-        Double max = Double.MIN_VALUE;
-        for(int i=0; i<pages2.length; i++) {
-        	if(max<pages2[i].matchScore) {
-        		max = pages2[i].matchScore;
-        		answer = i;
+        int answer=0;
+        Double maxScore = Double.MIN_VALUE;
+        for(Page page : map.values()) {
+        	page.setMatchScore();
+        	if(page.matchScore > maxScore) {
+        		maxScore = page.matchScore;
+        		answer = page.idx;
         	}
         }
-//        System.out.println(answer);
         return answer;
     }
 	
+	// 웹페이지의 url을 찾는 함수
 	static String findUrl(String html) {
-		String meta = "<meta property=\"og:url\" content=\"";
-		int start = html.indexOf(meta) + meta.length();
-		int end = html.indexOf("\"", start);
-		
-		return html.substring(start, end);
+		String url = "";
+		Matcher matcher = CURRENT_URL.matcher(html);
+		while (matcher.find()) {
+			url =  matcher.group(1);
+		}
+		return url;
 	}
 	
+	// 기본 점수 계산하는 함수
 	static int getBaseScore(String word, String html) {
 		int index = html.indexOf(word);
 		int baseScore=0;
@@ -81,35 +103,11 @@ public class Kakao13 {
 			char pre = html.charAt(index-1);
 			char post = html.charAt(index+word.length());
 			
-			if(!Character.isLowerCase(pre) && !Character.isLowerCase(post)) 
+			if((pre < 'a' || pre > 'z') && (post < 'a' || post > 'z')) 
 				baseScore++;
 			
 			index = html.indexOf(word, index+1);
 		}
-		
 		return baseScore;
-	}
-	
-	static int getLinkCnt(String html, int i){
-		String tag = "<a href=\"";
-//		ArrayList<String> arrayList = new ArrayList<String>();
-		String tempHtml = html;
-		int cnt = 0;
-		
-		while(tempHtml.contains(tag)) {
-			int start = tempHtml.indexOf(tag) + tag.length();
-			int end = tempHtml.indexOf("\"", start);
-			String url = tempHtml.substring(start, end);
-			System.out.println(url);
-			if (map.containsKey(url)) {
-				pages2[map.get(url)].links.add(i);
-				System.out.println(pages2[map.get(url)].links);
-			}
-//			arrayList.add(url);
-			cnt++;
-			tempHtml = tempHtml.substring(end);
-		}
-//		return arrayList.toArray(new String[arrayList.size()]);
-		return cnt;
 	}
 }
