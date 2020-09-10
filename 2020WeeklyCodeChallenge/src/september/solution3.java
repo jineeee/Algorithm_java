@@ -19,7 +19,7 @@ public class solution3 {
         	else left_min[i] = Math.min(left_min[i-1], a[i]);
         }
         for(int i=a.length-1; i>-1; i--) {
-        	if(i==a.length-1) right_min[i] = a[i];
+        	if(i==a.length) right_min[i] = a[i];
         	else right_min[i] = Math.min(right_min[i+1], a[i]);
         }
         int cnt = 0;
