@@ -7,7 +7,7 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/64064
  */
 
-public class Kakao06 {
+public class Kakao06_dfs {
 	
 	public static void main(String[] args) {
 		String[] user1 = {"frodo", "fradi", "crodo", "abc123", "frodoc"};

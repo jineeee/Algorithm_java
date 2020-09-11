@@ -18,7 +18,7 @@ class Node{
 	}
 }
 
-public class Kakao09 {
+public class Kakao09_binaryTree {
 	
 	public static void main(String[] args) {
 		

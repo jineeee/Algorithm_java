@@ -2,7 +2,12 @@ package Lv3;
 
 import java.util.*;
 
-public class Kakao10 {
+/*
+ * 카카오 경주로 건설 - bfs
+ * https://programmers.co.kr/learn/courses/30/lessons/67259
+ */
+
+public class Kakao10_bfs {
 	public static void main(String[] args) {
 		int[][] arr1 = {{0,0,0},{0,0,0},{0,0,0}};
 		int[][] arr2 = {{0,0,0,0,0,0,0,1},{0,0,0,0,0,0,0,0},{0,0,0,0,0,1,0,0},
@@ -67,7 +72,7 @@ public class Kakao10 {
 //	}
 	
 	static void bfs(int[][] board) {
-		queue.add(new Car(0, 0, -1, 0));
+		queue.add(new Car(0, 0, -1, 0)); // 시작점의 경우 예외이므로 방향을 -1로 넣어 예외처리
 		
 		while (!queue.isEmpty()) {
 			Car car = queue.poll();

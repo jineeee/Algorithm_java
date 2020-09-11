@@ -7,7 +7,7 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/60063
  */
 
-public class Kakao08 {
+public class Kakao08_bfs {
 	
 	public static void main(String[] args) {
 		int[][] arr = {{0, 0, 0, 1, 1},{0, 0, 0, 1, 0}, {0, 1, 0, 1, 1}, {1, 1, 0, 0, 1}, {0, 0, 0, 0, 0}};

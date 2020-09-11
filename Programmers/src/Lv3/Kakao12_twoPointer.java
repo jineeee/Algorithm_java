@@ -7,7 +7,7 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/67258
  */
 
-public class Kakao12 {
+public class Kakao12_twoPointer {
 	
 	public static void main(String[] args) {
 		String[] arr = {"DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"};
