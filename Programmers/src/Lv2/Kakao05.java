@@ -53,16 +53,6 @@ public class Kakao05 {
 		return temp;
 	}
 	
-	static boolean isBalance(String p) {
-		int left = 0, right=0;
-		for(int i=0; i<p.length(); i++) {
-			if(p.charAt(i)=='(') left++;
-			else right++;
-		}
-		if (left==right) return true;
-		return false;
-	}
-	
 	static boolean isCorrect(String p) {
 		Stack<Character> stack = new Stack<Character>();
 		

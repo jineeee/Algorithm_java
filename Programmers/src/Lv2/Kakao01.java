@@ -32,6 +32,7 @@ public class Kakao01 {
         			count = 1; // count 값 초기화
         		}
         	}
+        	
         	// 마지막 문자는 비교 대상이 없으므로 else문을 실행하지 않고 for문을 빠져나오므로, 여기서 수
         	result += processCount(count) + num2;
         	if(s.length()%i != 0) { // 남은 문자열이 있다면 result 값에 합쳐줌

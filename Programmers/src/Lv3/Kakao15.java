@@ -94,8 +94,10 @@ public class Kakao15 {
 				if(!isValid(nx, ny) || visit[nx][ny]) continue;
 				if(!map[nx][ny].equals(target) && map[nx][ny].matches("[A-Z||*]")) continue;
 				
-				if(nowTile.dir==-1) queue.offer(new Tile(nx, ny, i%2, 0));
-				else if(nowTile.dir==i%2) queue.offer(new Tile(nx, ny, i%2, nowTile.curve));
+				if(nowTile.dir==-1) 
+					queue.offer(new Tile(nx, ny, i%2, 0));
+				else if(nowTile.dir==i%2) 
+					queue.offer(new Tile(nx, ny, i%2, nowTile.curve));
 				else queue.offer(new Tile(nx, ny, i%2, nowTile.curve+1));
 				visit[nx][ny] = true;
 			}
