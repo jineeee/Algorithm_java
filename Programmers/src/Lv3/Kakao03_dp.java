@@ -5,7 +5,7 @@ package Lv3;
  * https://programmers.co.kr/learn/courses/30/lessons/1832
  */
 
-public class Kakao16 {
+public class Kakao03_dp {
 	
 	public static void main(String[] args) {
 		int[][] arr = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
