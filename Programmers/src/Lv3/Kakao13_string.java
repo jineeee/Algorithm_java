@@ -8,7 +8,7 @@ import java.util.regex.*;
  * https://programmers.co.kr/learn/courses/30/lessons/42893
  */
 
-public class Kakao13 {
+public class Kakao13_string {
 	
 	public static void main(String[] args) {
 		
