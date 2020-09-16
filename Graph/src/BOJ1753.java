@@ -8,15 +8,15 @@ import java.util.*;
  * https://www.acmicpc.net/problem/1753
  */
 
-class Node{
-	int idx, weight;
-	public Node(int idx, int weight) {
-		this.idx = idx;
-		this.weight = weight;
-	}
-}
-
 public class BOJ1753 {
+	static class Node{
+		int idx, weight;
+		public Node(int idx, int weight) {
+			this.idx = idx;
+			this.weight = weight;
+		}
+	}
+	
 	static int v, e, start, INF=987654321;
 	static int[] dist;
 	static ArrayList<Node>[] list;
