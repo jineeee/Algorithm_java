@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 /*
- * 백준 1916 - 다익스트라, 플루이드와샬
+ * 백준 1916 - 다익스트라
  * https://www.acmicpc.net/problem/1916
  */
 
