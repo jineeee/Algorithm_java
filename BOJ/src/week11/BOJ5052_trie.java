@@ -3,6 +3,11 @@ package week11;
 import java.io.*;
 import java.util.Arrays;
 
+/*
+ * 백준 전화번호 - Trie, 트리
+ * https://www.acmicpc.net/problem/5052
+ */
+
 public class BOJ5052_trie {
 	
 	static class Trie{
