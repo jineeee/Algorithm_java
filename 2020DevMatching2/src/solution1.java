@@ -24,6 +24,7 @@ public class solution1 {
         for(int i=0; i<lights.length; i++) 
         	if(lights[i]) lights[i] = false;
         	else lights[i] = true;
+        
         System.out.print(Arrays.toString(lights));
         answer += cnt;
         
