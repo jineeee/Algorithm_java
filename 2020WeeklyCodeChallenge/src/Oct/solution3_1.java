@@ -37,14 +37,12 @@ public class solution3_1 {
 			if(result[i]>result[start]) start = i;
 		for(int i=1; i<=n; i++) if(result[start]==result[i]) cnt++;
 		if(cnt>=2) return result[start]; // 만약 가장 먼 노드가 2개라면 X와 이 두 노드를 선택하면 되므로 리턴
-		System.out.println("1" + Arrays.toString(result));
+		
 		// X에서 가장 먼 노드인 Y를 기준으로 각 노드까지의 값을 찾음
 		cnt = 0;
 		result = bfs(list, start, n);
 		for(int i=1; i<=n; i++) if(result[start]==result[i]) cnt++;
-		System.out.println(Arrays.toString(result) + start + result[start] + cnt);
 		if(cnt>=2) return result[start];
-		System.out.print("dd");
 		return result[start]-1;
 	}
 	
