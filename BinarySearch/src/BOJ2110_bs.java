@@ -1,5 +1,3 @@
-package week09;
-
 import java.util.*;
 
 /*
@@ -27,7 +25,7 @@ public class BOJ2110_bs {
 			int mid = (s+e)/2;
 			int start = home[0]; // 첫번째 집에 공유기 설치
 			int cnt = 1; // 첫번째 집에 설치됐으므로 1
-			
+			System.out.println(mid + " " + start);
 			for(int i=1; i<n; i++) {
 				dist = home[i] - start; // 공유기가 설치된 집과의 거리 계산
 				if(mid<=dist) { // 기준 거리 이상일 때만 공유기 설치
