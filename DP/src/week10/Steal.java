@@ -8,8 +8,6 @@ package week10;
 public class Steal {
 	
 	public int solution(int[] money) {
-        int answer = 0;
-        
         int[] dp1 = new int[money.length];
         dp1[0] = money[0];
         dp1[1] = money[0];
