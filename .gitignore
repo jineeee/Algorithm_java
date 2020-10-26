@@ -1,14 +1,3 @@
-/.metadata/
-2019HyundaiCardSummerInternship/
-2020KakaoInternship/
-2020ProgrammersSummerCoding/
-2020DevMatching/
-2020KakaoBlind/
-2020NTech/
-2020Naver/
-202011street/
-2020Coupang/
-2020NHN/
 # Created by https://www.gitignore.io/api/java,macos,eclipse
 # Edit at https://www.gitignore.io/?templates=java,macos,eclipse
 
@@ -135,3 +124,16 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/java,macos,eclipse
+
+/.metadata/
+2019HyundaiCardSummerInternship/
+2020KakaoInternship/
+2020ProgrammersSummerCoding/
+2020DevMatching/
+2020KakaoBlind/
+2020NTech/
+2020Naver/
+202011street/
+2020Coupang/
+2020NHN/
+2020Fasoo/
