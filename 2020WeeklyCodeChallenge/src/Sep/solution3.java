@@ -1,4 +1,4 @@
-package september;
+package Sep;
 
 /*
  * 풍선 터뜨리기 - DP

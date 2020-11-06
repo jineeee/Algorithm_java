@@ -17,7 +17,6 @@ public class solution2 {
                 if(s.charAt(i)=='0') cnt2++;
             }
             String temp = s.replaceAll("0", "");
-            System.out.println(temp.length());
             s = convert(2, temp.length());
             	
             	if(s.equals("1")) break;
