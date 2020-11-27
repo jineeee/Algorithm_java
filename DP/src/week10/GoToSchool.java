@@ -10,7 +10,7 @@ public class GoToSchool {
 		solution(4, 3, new int[][] {{2,2}});
 	}
 	
-	static     public int solution(int m, int n, int[][] puddles) {
+	static public int solution(int m, int n, int[][] puddles) {
         int[][] dp = new int[n+1][m+1];
         for(int k=0; k<puddles.length; k++){
             dp[puddles[k][1]][puddles[k][0]] = -1;
